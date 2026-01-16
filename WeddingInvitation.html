@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Saravanan & Rubini | Wedding Invitation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== BASE ===== */
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    color: #e6e6e6;
+}
+
+/* ===== MILKY WAY GALAXY ===== */
+.milkyway {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 25% 40%, rgba(140,110,255,0.45), transparent 55%),
+        radial-gradient(ellipse at 70% 60%, rgba(255,200,140,0.35), transparent 60%),
+        linear-gradient(120deg, #040014, #1a0f4d, #040014);
+    background-size: 200% 200%;
+    animation: galaxyDrift 80s linear infinite;
+    filter: saturate(1.8) contrast(1.25);
+    z-index: 0;
+}
+
+@keyframes galaxyDrift {
+    from { background-position: 0% 50%; }
+    to { background-position: 100% 50%; }
+}
+
+/* ===== STARS ===== */
+.stars {
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(1px 1px at 10% 20%, #fff, transparent),
+        radial-gradient(1px 1px at 30% 80%, #fff, transparent),
+        radial-gradient(1px 1px at 70% 40%, #fff, transparent),
+        radial-gradient(2px 2px at 90% 10%, #fff, transparent),
+        radial-gradient(1px 1px at 50% 60%, #fff, transparent);
+    background-size: 400px 400px;
+    animation: twinkle 6s infinite alternate;
+    z-index: 1;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.6; }
+    to { opacity: 1; }
+}
+
+/* ===== SHOOTING STARS ===== */
+.shooting-stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.shooting-star {
+    position: absolute;
+    width: 150px;
+    height: 2px;
+    background: linear-gradient(90deg, #fff, rgba(255,255,255,0));
+    transform: rotate(-45deg);
+    animation: shoot 2s ease-in-out forwards;
+}
+
+@keyframes shoot {
+    from {
+        transform: translate(0,0) rotate(-45deg);
+        opacity: 1;
+    }
+    to {
+        transform: translate(-700px,700px) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+/* ===== FLOWER RAIN ===== */
+.flower-rain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.flower {
+    position: absolute;
+    top: -90px;
+    animation: fall linear infinite;
+    opacity: 0.9;
+    filter: drop-shadow(0 0 6px rgba(255,255,255,0.35));
+}
+
+.flower.white { color: #ffffff; }
+.flower.yellow { color: #f5e6b8; }
+
+.flower.small { font-size: 24px; }
+.flower.medium { font-size: 36px; }
+.flower.large { font-size: 52px; }
+
+@keyframes fall {
+    from { transform: translateY(-90px) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.9; }
+    to { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+/* ===== INVITATION CARD ===== */
+.invite-card {
+    position: relative;
+    z-index: 4;
+    max-width: 420px;
+    width: 100%;
+    padding: 42px 30px;
+    border-radius: 24px;
+    background: linear-gradient(160deg, rgba(15,15,35,0.95), rgba(0,0,0,0.95));
+    text-align: center;
+    box-shadow: 0 30px 90px rgba(0,0,0,0.9);
+    backdrop-filter: blur(6px);
+    animation: fadeUp 1.5s ease;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.tagline {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #c9a45c;
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #f5e6b8;
+}
+
+.amp { color: #c9a45c; }
+
+.divider {
+    width: 70px;
+    height: 2px;
+    background: linear-gradient(to right, #8c6b2f, #e8d8a8, #8c6b2f);
+    margin: 22px auto;
+}
+
+.subtitle {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #cfcfcf;
+    margin-bottom: 30px;
+}
+
+.details span {
+    display: block;
+    margin-top: 12px;
+    color: #c9a45c;
+    font-weight: 500;
+}
+
+.venue {
+    margin-top: 22px;
+    color: #bfbfbf;
+}
+
+.map-btn {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 12px 28px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #8c6b2f, #e8d8a8);
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 13px;
+    color: #9a9a9a;
+}
+</style>
+</head>
+
+<body>
+
+<div class="milkyway"></div>
+<div class="stars"></div>
+<div class="shooting-stars" id="shootingStars"></div>
+<div class="flower-rain" id="flowerRain"></div>
+
+<div class="invite-card">
+    <div class="tagline">THE WEDDING CELEBRATION</div>
+    <h1>Saravanan <span class="amp">&</span> Rubini</h1>
+    <div class="divider"></div>
+
+    <p class="subtitle">
+        With hearts full of love, we invite you to witness the union of two souls
+        as we begin our timeless journey together.
+    </p>
+
+    <div class="details">
+        <span>Reception</span>
+        27 January 2026 • 6:30 PM onwards
+        <span>Wedding</span>
+        28 January 2026 • 06:00 AM – 07:30 AM
+    </div>
+
+    <div class="venue">
+        Imperial Garden Kalyana Mandapam<br>
+        Padur, Chennai
+    </div>
+
+    <a class="map-btn" href="https://maps.app.goo.gl/LkXeeubFAfq52JEV7" target="_blank">
+        View Location
+    </a>
+
+    <div class="footer">
+        Your presence will add grace to our celebration
+    </div>
+</div>
+
+<script>
+/* FLOWER RAIN */
+const flowers = ["❀","✿","❁"];
+const sizes = ["small","medium","large"];
+const colors = ["white","yellow"];
+const flowerBox = document.getElementById("flowerRain");
+
+setInterval(() => {
+    const f = document.createElement("div");
+    f.className = "flower";
+    f.textContent = flowers[Math.floor(Math.random()*flowers.length)];
+    f.classList.add(sizes[Math.floor(Math.random()*sizes.length)]);
+    f.classList.add(colors[Math.floor(Math.random()*colors.length)]);
+    f.style.left = Math.random()*100 + "vw";
+
+    let duration = 9;
+    if (f.classList.contains("medium")) duration = 12;
+    if (f.classList.contains("large")) duration = 16;
+
+    f.style.animationDuration = duration + "s";
+    flowerBox.appendChild(f);
+    setTimeout(()=>f.remove(), duration*1000);
+}, 500);
+
+/* SHOOTING STARS */
+const shootBox = document.getElementById("shootingStars");
+setInterval(() => {
+    const s = document.createElement("div");
+    s.className = "shooting-star";
+    s.style.top = Math.random()*40 + "vh";
+    s.style.left = (60 + Math.random()*40) + "vw";
+    shootBox.appendChild(s);
+    setTimeout(()=>s.remove(),2000);
+}, 4500);
+</script>
+
+</body>
+</html>
